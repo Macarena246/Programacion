@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="model">
+  <ClassDiagramComponents>
+    <Class name="Club" package="model" visibility="public" xPosition="903.0" yPosition="18.0">
+      <Fields>
+        <Field name="idClub" type="int" visibility="private"/>
+        <Field name="nombreClub" type="String" visibility="private"/>
+        <Field name="annoCreacion" type="int" visibility="private"/>
+        <Field name="estadio" type="String" visibility="private"/>
+        <Field name="futbolistas" type="List&lt;Jugador&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreClub"/>
+          <Argument type="int" name="annoCreacion"/>
+          <Argument type="String" name="estadio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdClub" returnType="int" visibility="public"/>
+        <Method name="setIdClub" returnType="void" visibility="public">
+          <Argument type="int" name="idClub"/>
+        </Method>
+        <Method name="getNombreClub" returnType="String" visibility="public"/>
+        <Method name="setNombreClub" returnType="void" visibility="public">
+          <Argument type="String" name="nombreClub"/>
+        </Method>
+        <Method name="getAnnoCreacion" returnType="int" visibility="public"/>
+        <Method name="setAnnoCreacion" returnType="void" visibility="public">
+          <Argument type="int" name="annoCreacion"/>
+        </Method>
+        <Method name="getEstadio" returnType="String" visibility="public"/>
+        <Method name="setEstadio" returnType="void" visibility="public">
+          <Argument type="String" name="estadio"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getFutbolistas" returnType="List&lt;Jugador&gt;" visibility="public"/>
+        <Method name="listarFutbolistas" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ClubDAO" package="model" visibility="public" xPosition="1538.0" yPosition="18.0">
+      <Fields>
+        <Field name="conexion" type="ConexionBD" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ConexionBD" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="createClub" returnType="void" visibility="public">
+          <Argument type="Club" name="club"/>
+        </Method>
+        <Method name="readClub" returnType="List&lt;Club&gt;" visibility="public"/>
+        <Method name="updateClub" returnType="void" visibility="public">
+          <Argument type="Club" name="club"/>
+        </Method>
+        <Method name="deleteClub" returnType="void" visibility="public">
+          <Argument type="int" name="idClub"/>
+        </Method>
+        <Method name="buscarNombre" returnType="Club" visibility="public">
+          <Argument type="String" name="nombreClub"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HistorialClub" package="model" visibility="public" xPosition="1531.0" yPosition="264.0">
+      <Fields>
+        <Field name="idMilitancia" type="int" visibility="private"/>
+        <Field name="club" type="Club" visibility="private"/>
+        <Field name="division" type="int" visibility="private"/>
+        <Field name="temporada" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="division"/>
+          <Argument type="String" name="temporada"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdMilitancia" returnType="int" visibility="public"/>
+        <Method name="setIdMilitancia" returnType="void" visibility="public">
+          <Argument type="int" name="idMilitancia"/>
+        </Method>
+        <Method name="getClub" returnType="Club" visibility="public"/>
+        <Method name="setClub" returnType="void" visibility="public">
+          <Argument type="Club" name="club"/>
+        </Method>
+        <Method name="getDivision" returnType="int" visibility="public"/>
+        <Method name="setDivision" returnType="void" visibility="public">
+          <Argument type="int" name="division"/>
+        </Method>
+        <Method name="getTemporada" returnType="String" visibility="public"/>
+        <Method name="setTemporada" returnType="void" visibility="public">
+          <Argument type="String" name="temporada"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HistorialClubDAO" package="model" visibility="public" xPosition="1506.0" yPosition="654.0">
+      <Fields>
+        <Field name="conexion" type="ConexionBD" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ConexionBD" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="createHistorialClub" returnType="void" visibility="public">
+          <Argument type="HistorialClub" name="historialClub"/>
+        </Method>
+        <Method name="readHistorialClub" returnType="List&lt;HistorialClub&gt;" visibility="public"/>
+        <Method name="updateHistorialClub" returnType="void" visibility="public">
+          <Argument type="HistorialClub" name="historialClub"/>
+        </Method>
+        <Method name="deleteHistorialClub" returnType="void" visibility="public">
+          <Argument type="int" name="idMilitancia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HistorialJugador" package="model" visibility="public" xPosition="522.0" yPosition="587.0">
+      <Fields>
+        <Field name="idHistorico" type="int" visibility="private"/>
+        <Field name="historialClub" type="HistorialClub" visibility="private"/>
+        <Field name="jugador" type="Jugador" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdHistorico" returnType="int" visibility="public"/>
+        <Method name="setIdHistorico" returnType="void" visibility="public">
+          <Argument type="int" name="idHistorico"/>
+        </Method>
+        <Method name="getHistorialClub" returnType="HistorialClub" visibility="public"/>
+        <Method name="setHistorialClub" returnType="void" visibility="public">
+          <Argument type="HistorialClub" name="historialClub"/>
+        </Method>
+        <Method name="getJugador" returnType="Jugador" visibility="public"/>
+        <Method name="setJugador" returnType="void" visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HistorialJugadorDAO" package="model" visibility="public" xPosition="961.0" yPosition="654.0">
+      <Fields>
+        <Field name="conexion" type="ConexionBD" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ConexionBD" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="createHistorialJugador" returnType="void" visibility="public">
+          <Argument type="HistorialJugador" name="historialJugador"/>
+        </Method>
+        <Method name="readHistorialJugador" returnType="List&lt;HistorialJugador&gt;" visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+        </Method>
+        <Method name="updateHistorialJugador" returnType="void" visibility="public">
+          <Argument type="HistorialJugador" name="historialJugador"/>
+        </Method>
+        <Method name="deleteHistorialJugador" returnType="void" visibility="public">
+          <Argument type="HistorialJugador" name="historialJugador"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="model" visibility="public" xPosition="20.0" yPosition="-9.0">
+      <Fields>
+        <Field name="nif" type="String" visibility="private"/>
+        <Field name="nombreJugador" type="String" visibility="private"/>
+        <Field name="apellido1" type="String" visibility="private"/>
+        <Field name="apellido2" type="String" visibility="private"/>
+        <Field name="nacionalidad" type="String" visibility="private"/>
+        <Field name="nacimiento" type="Date" visibility="private"/>
+        <Field name="clubes" type="List&lt;Club&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nif"/>
+          <Argument type="String" name="nombreJugador"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="apellido2"/>
+          <Argument type="String" name="nacionalidad"/>
+          <Argument type="Date" name="nacimiento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNif" returnType="String" visibility="public"/>
+        <Method name="setNif" returnType="void" visibility="public">
+          <Argument type="String" name="nif"/>
+        </Method>
+        <Method name="getNombreJugador" returnType="String" visibility="public"/>
+        <Method name="setNombreJugador" returnType="void" visibility="public">
+          <Argument type="String" name="nombreJugador"/>
+        </Method>
+        <Method name="getApellido1" returnType="String" visibility="public"/>
+        <Method name="setApellido1" returnType="void" visibility="public">
+          <Argument type="String" name="apellido1"/>
+        </Method>
+        <Method name="getApellido2" returnType="String" visibility="public"/>
+        <Method name="setApellido2" returnType="void" visibility="public">
+          <Argument type="String" name="apellido2"/>
+        </Method>
+        <Method name="getNacionalidad" returnType="String" visibility="public"/>
+        <Method name="setNacionalidad" returnType="void" visibility="public">
+          <Argument type="String" name="nacionalidad"/>
+        </Method>
+        <Method name="getNacimiento" returnType="Date" visibility="public"/>
+        <Method name="setNacimiento" returnType="void" visibility="public">
+          <Argument type="Date" name="nacimiento"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getClubes" returnType="List&lt;Club&gt;" visibility="public"/>
+        <Method name="listarClubes" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JugadorDAO" package="model" visibility="public" xPosition="39.0" yPosition="587.0">
+      <Fields>
+        <Field name="conexion" type="ConexionBD" visibility="private"/>
+        <Field name="futbolistas" type="List&lt;Jugador&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ConexionBD" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="createJugador" returnType="void" visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+        </Method>
+        <Method name="readJugador" returnType="List&lt;Jugador&gt;" visibility="public"/>
+        <Method name="updateJugador" returnType="void" visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+        </Method>
+        <Method name="deleteJugador" returnType="void" visibility="public">
+          <Argument type="String" name="nif"/>
+        </Method>
+        <Method name="buscarNif" returnType="Jugador" visibility="public">
+          <Argument type="String" name="nif"/>
+        </Method>
+        <Method name="asociarJugadorClub" returnType="void" visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+          <Argument type="Club" name="club"/>
+        </Method>
+        <Method name="obtenerIdMilitanciaClub" returnType="int" visibility="private">
+          <Argument type="Club" name="club"/>
+        </Method>
+        <Method name="listarFutbolistas" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="model.HistorialClubDAO" target="model.HistorialClub" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.JugadorDAO" target="model.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.JugadorDAO" target="model.Club" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.HistorialJugador" target="model.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="historialClub" source="model.HistorialJugador" target="model.HistorialClub" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="futbolistas" source="model.Club" target="model.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Jugador&gt;"/>
+    <HasRelation name="futbolistas" source="model.JugadorDAO" target="model.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Jugador&gt;"/>
+    <HasRelation name="clubes" source="model.Jugador" target="model.Club" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Club&gt;"/>
+    <UseRelation source="model.HistorialJugador" target="model.HistorialClub" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.ClubDAO" target="model.Club" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jugador" source="model.HistorialJugador" target="model.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.Club" target="model.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.Jugador" target="model.Club" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="club" source="model.HistorialClub" target="model.Club" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.HistorialClub" target="model.Club" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="model.HistorialJugadorDAO" target="model.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

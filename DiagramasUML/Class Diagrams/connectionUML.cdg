@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="connection">
+  <ClassDiagramComponents>
+    <Class name="ConexionBD" package="connection" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="url" type="String" visibility="package"/>
+        <Field name="user" type="String" visibility="package"/>
+        <Field name="password" type="String" visibility="package"/>
+        <Field name="cx" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="openConnect" returnType="void" visibility="public"/>
+        <Method name="closeConnect" returnType="void" visibility="public"/>
+        <Method name="executeQuery" returnType="ResultSet" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+        <Method name="executeUpdate" returnType="boolean" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+        <Method name="getCx" returnType="Connection" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

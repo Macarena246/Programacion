@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main">
+  <ClassDiagramComponents>
+    <Class name="App" package="main" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="escaner" type="Scanner" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="jugadorDAO" type="JugadorDAO" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="clubDAO" type="ClubDAO" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="mostrarMenu" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="insertarDatosJugador" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="insertarDatosClub" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="modificarDatos" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="modificarDatosJugador" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="modificarDatosClub" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="asociarFutbolistaClub" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="listarFutbolistasClub" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="listarClubesFutbolista" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="listarClubes" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="listarJugadores" returnType="void" visibility="private" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
